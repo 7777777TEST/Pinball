@@ -1281,6 +1281,10 @@ function StartGame()
 	gCCTX = gCanvas.getContext("2d");
 
 	txt = localStorage.getItem("PinballScore");
+	if(txt==null)
+	{
+		txt="";
+	}
 
 	g=gCCTX.createLinearGradient(400*zoom,0,0,0);
 	g.addColorStop(0  ,"#FF0000");
@@ -1474,9 +1478,9 @@ function handleGameConditions()
 		for(i=0;i<txt.split("\n").length;i++)
 		{
 			if(Number(txt.split("\n")[i]!=NaN))
-				{
-			scores.push(Number(txt.split("\n")[i]));
-				}
+			{
+				scores.push(Number(txt.split("\n")[i]));
+			}
 		}
 		scores.push(Number(document.getElementById("spScore").innerHTML));
 		scores.sort(function(a,b){if( a < b ) return -1;if( a > b ) return 1;return 0;});
