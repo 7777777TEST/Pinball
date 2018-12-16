@@ -1477,7 +1477,7 @@ function handleGameConditions()
 		var tmptxt="";
 		for(i=0;i<txt.split("\n").length;i++)
 		{
-			if(Number(txt.split("\n")[i]!=NaN))
+			if(Number(txt.split("\n")[i])!=NaN && Number(txt.split("\n")[i])!=0)
 			{
 				scores.push(Number(txt.split("\n")[i]));
 			}
