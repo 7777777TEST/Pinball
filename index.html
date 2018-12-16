@@ -1,16 +1,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="viewport" content="width=400,user-scalable=no,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0">
 		<link rel="manifest" href="manifest.json">
 		<title>Pinball</title>
 	</head>
 	<body style="overflow:hidden">
-		<style>
-			html, css{
-				touch-action:none;
-			}
-		</style>
 		<div id="Board">
 		<div style="top:65px;left:127px">
 			Score: <span id="spScore">0</span>
@@ -1267,7 +1262,7 @@ var gLauncherSpawnPoint = pixelToB2dCoords(370, 280);
 var gbGameOver = false;
 var gPause = false;
 var g="#000000";
-var doubleClick=0;
+var txt="";
 
 if (window.addEventListener) {
 	window.addEventListener("load", StartGame, false);
@@ -1284,7 +1279,8 @@ function StartGame()
 	gCanvas.width=window.innerWidth;
 	gCanvas.height=window.innerHeight;
 	gCCTX = gCanvas.getContext("2d");
-	gCCTX.font = 40*zoom+"px Arial";
+
+	txt = localStorage.getItem("PinballScore");
 
 	g=gCCTX.createLinearGradient(400*zoom,0,0,0);
 	g.addColorStop(0  ,"#FF0000");
@@ -1315,11 +1311,6 @@ function initInput()
 	document.addEventListener("keydown", KeyDown, false);	
 	document.addEventListener("keyup", KeyUp, false);	
 	document.addEventListener("touchstart",function(event){
-		if(gPause)
-		{
-			gPause=false;
-			document.getElementById("spPAUSE").innerHTML="";
-		}
 		if(gbGameOver)
 		{
 			gbGameOver=false;
@@ -1478,8 +1469,25 @@ function handleGameConditions()
 	// Is the game over?
 	if (gScoreboard.GetBallsLeft() == 0 &&  gNumBallsInPlay == 0) {
 		gbGameOver = true;
+		var scores=[];
+		var tmptxt="";
+		for(i=0;i<txt.split("\n").length;i++)
+		{
+			if(Number(txt.split("\n")[i]!=NaN))
+				{
+			scores.push(Number(txt.split("\n")[i]));
+				}
+		}
+		scores.push(Number(document.getElementById("spScore").innerHTML));
+		scores.sort(function(a,b){if( a < b ) return -1;if( a > b ) return 1;return 0;});
+		for(var i=0;i<scores.length;i++)
+		{
+			tmptxt+=("\n"+scores[i]);
+		}
+		txt=tmptxt;
+		localStorage.setItem("PinballScore",txt);
 		document.getElementById("spGAMEOVER").innerHTML="GAME"+"&nbsp"+"OVER";
-	}		
+	}
 }
 function doMultiball()
 {
