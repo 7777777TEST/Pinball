@@ -34,7 +34,7 @@ h3 {
 	text-shadow: -6px 0px 15px rgb(255, 255, 255), 6px 0px 15px rgb(255, 255, 255);
 }
 </style>
-	<input type="button" value="Scores" class="button" onclick="showRank()">
+	<input type="button" class="button" id="score_button" value="Scores" onclick="showRank()">
 	<div id="score" style="z-index:1;top:65px;left:127px"></div>
 	<div id="Board">
 		<div style="top:65px;left:127px">
@@ -57,9 +57,9 @@ h3 {
 <script>
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker.register('sw.js').then(function (registration) {
-			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+			console.log('OK: ', registration.scope);
 		}).catch(function (err) {
-			console.log('ServiceWorker registration failed: ', err);
+			console.log('FAILED: ', err);
 		});
 	}
 </script>
@@ -1676,6 +1676,7 @@ h3 {
 		g.addColorStop(1, "#00FF00");
 
 		document.getElementById("Board").style.fontSize = 30 * zoom + "px";
+		document.getElementById("score_button").style.fontSize = 30 * zoom + "px";
 		document.getElementById("spPAUSE").style = "position: absolute;top:" + zoom * 300 + "px;z-index:10;left:" + zoom * 135 + "px";
 		document.getElementById("spPAUSE").style.fontSize = 40 * zoom + "px";
 		document.getElementById("spGAMEOVER").style = "position:absolute;top:" + zoom * 300 + "px;z-index:10;left:" + zoom * 115 + "px" + ";color:#000000";
@@ -2103,5 +2104,4 @@ h3 {
 		}
 	}
 </script>
-
 </html>
