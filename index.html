@@ -20,8 +20,21 @@ h2 {
 h3 {
 	background:#eee;
 }
+.button{
+	position:bottom;
+	color: #FFF;
+	background: #09D;
+	transition: .2s;
+	bottom:0;
+	position:absolute;
+	z-index:10;
+}
+
+.button:hover {
+	text-shadow: -6px 0px 15px rgb(255, 255, 255), 6px 0px 15px rgb(255, 255, 255);
+}
 </style>
-	<input type="button" value="Scores" style="z-index:1" onclick="showRank()">
+	<input type="button" value="Scores" class="button" onclick="showRank()">
 	<div id="score" style="z-index:1;top:65px;left:127px"></div>
 	<div id="Board">
 		<div style="top:65px;left:127px">
