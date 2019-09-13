@@ -789,54 +789,6 @@ h3 {
 	};
 </script>
 <script>
-	//keyboard.js
-	// Key constants
-	KEY_PLUS_NUMROW = 187;
-	KEY_PLUS_NUMPAD = 43;
-	KEY_MINUS_NUMPAD = 45;
-	KEY_MINUS_NUMROW = 45;
-	KEY_RIGHT_CARET = 46;
-	KEY_LEFT_CARET = 44;
-	KEY_O = 111;
-	KEY_A = 65;
-	KEY_S = 83;
-	KEY_D = 68;
-	KEY_F = 70;
-	KEY_X = 88;
-	KEY_P = 80;
-	KEY_B = 66;
-	KEY_V = 86;
-	KEY_W = 87;
-
-	KEY_ENTER = 13;
-
-	KEY_LEFT_ARROW_NUMPAD = 100; // 52;
-	KEY_RIGHT_ARROW_NUMPAD = 102; // 54;
-	KEY_UP_ARROW_NUMPAD = 104; // 56;
-	KEY_DOWN_ARROW_NUMPAD = 98; // 50;
-
-	LOCK_KEY_LEFT_ARROW_NUMPAD = 37; // 52;
-	LOCK_KEY_RIGHT_ARROW_NUMPAD = 39; // 54;
-	LOCK_KEY_UP_ARROW_NUMPAD = 38; // 56;
-	LOCK_KEY_DOWN_ARROW_NUMPAD = 40;// 50;
-
-	KEY_UP = 38;
-	KEY_DOWN = 40;
-	KEY_LEFT = 37;
-	KEY_RIGHT = 39;
-
-	KEY_ESCAPE = 27;
-	KEY_TAB = 9;
-	KEY_SHIFT = 16;
-
-	KEY_PAGE_UP = 33;
-	KEY_PAGE_DOWN = 34;
-
-	KEY_LEFT_BRACE = 219;
-	KEY_RIGHT_BRACE = 221;
-	KEY_BACK_SLASH = 220;
-</script>
-<script>
 	//board.js
 	gBoardElementRestitution = .5;
 	gBoardElementFriction = .1;
@@ -934,7 +886,7 @@ h3 {
 		var LFlipperPos = pixelToB2dCoords(110, 452);
 		LFlipperBd.allowSleep = false;
 		LFlipperBd.position.Set(LFlipperPos.x, LFlipperPos.y);
-		LFlipperBd.userData={ drawShape: true,shapeName: "LFlipperC"};
+		LFlipperSd.userData={ drawShape: true,shapeName: "LFlipperC"};
 		var LFlipperCircleBody = b2.world.CreateBody(LFlipperBd);
 		LFlipperCircleBody.CreateShape(LFlipperSd);
 		var LFlipperPolyBody = createPoly(b2.world, LFlipperPolyPos[0], LFlipperPolyPos[1], LFlipperPolyPoints, true, { drawShape: true, allowSleep: false, shapeName: "LFlipperPoly" });
@@ -972,7 +924,7 @@ h3 {
 		RFlipperBd.allowSleep = false;
 		RFlipperSd.rotation = 1;
 		RFlipperBd.position.Set(RFlipperPos.x, RFlipperPos.y);
-		LFlipperBd.userData={ drawShape: true,shapeName: "RFlipperC"};
+		RFlipperSd.userData={ drawShape: true,shapeName: "RFlipperC"};
 		var RFlipperCircleBody = b2.world.CreateBody(RFlipperBd);
 		RFlipperCircleBody.CreateShape(RFlipperSd);
 		var RFlipperPolyBody = createPoly(b2.world, RFlipperPolyPos[0], RFlipperPolyPos[1], RFlipperPolyPoints, true, { drawShape: true, allowSleep: false, shapeName: "RFlipperPoly" });
