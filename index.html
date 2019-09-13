@@ -937,7 +937,7 @@ h3 {
 		LFlipperBd.userData={ drawShape: true,shapeName: "LFlipperC"};
 		var LFlipperCircleBody = b2.world.CreateBody(LFlipperBd);
 		LFlipperCircleBody.CreateShape(LFlipperSd);
-		var LFlipperPolyBody = createPoly(b2.world, LFlipperPolyPos[0], LFlipperPolyPos[1], LFlipperPolyPoints, false, { drawShape: true, allowSleep: false, shapeName: "LFlipperPoly" });
+		var LFlipperPolyBody = createPoly(b2.world, LFlipperPolyPos[0], LFlipperPolyPos[1], LFlipperPolyPoints, true, { drawShape: true, allowSleep: false, shapeName: "LFlipperPoly" });
 		LFlipperPolyBody.SetMassFromShapes();
 		LFlipperPolyBody.isBullet = true;
 		var LFlipperJointDef = new b2RevoluteJointDef();
@@ -975,7 +975,7 @@ h3 {
 		LFlipperBd.userData={ drawShape: true,shapeName: "RFlipperC"};
 		var RFlipperCircleBody = b2.world.CreateBody(RFlipperBd);
 		RFlipperCircleBody.CreateShape(RFlipperSd);
-		var RFlipperPolyBody = createPoly(b2.world, RFlipperPolyPos[0], RFlipperPolyPos[1], RFlipperPolyPoints, false, { drawShape: true, allowSleep: false, shapeName: "RFlipperPoly" });
+		var RFlipperPolyBody = createPoly(b2.world, RFlipperPolyPos[0], RFlipperPolyPos[1], RFlipperPolyPoints, true, { drawShape: true, allowSleep: false, shapeName: "RFlipperPoly" });
 		RFlipperPolyBody.SetMassFromShapes();
 		var RFlipperJointDef = new b2RevoluteJointDef();
 
