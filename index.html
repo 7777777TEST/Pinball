@@ -1308,10 +1308,11 @@ h3 {
 				}
 					break;
 			}
-			if(shape.m_userData.shapeName==null){
+			if(shape.m_userData==null){
 				context.stroke();
-			}
-			else if(shape.m_userData.shapeName=="launcher"||shape.m_userData.shapeName=="RightBumper"||shape.m_userData.shapeName=="LeftBumper"){
+			}else if(shape.m_userData.shapeName==null){
+				context.stroke();
+			}else if(shape.m_userData.shapeName=="launcher"||shape.m_userData.shapeName=="RightBumper"||shape.m_userData.shapeName=="LeftBumper"){
 				context.fill();
 			}else{
 				context.stroke();
