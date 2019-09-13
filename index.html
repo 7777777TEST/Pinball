@@ -924,7 +924,6 @@ h3 {
 		RFlipperBd.allowSleep = false;
 		RFlipperSd.rotation = 1;
 		RFlipperBd.position.Set(RFlipperPos.x, RFlipperPos.y);
-		RFlipperSd.userData={ drawShape: true,shapeName: "RFlipperC", allowSleep: false};
 		var RFlipperCircleBody = b2.world.CreateBody(RFlipperBd);
 		RFlipperCircleBody.CreateShape(RFlipperSd);
 		var RFlipperPolyBody = createPoly(b2.world, RFlipperPolyPos[0], RFlipperPolyPos[1], RFlipperPolyPoints, true, { drawShape: true, allowSleep: false, shapeName: "RFlipperPoly" });
