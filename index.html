@@ -1308,7 +1308,11 @@ h3 {
 				}
 					break;
 			}
-			context.stroke();
+			if(shape.m_userData.shapeName=="launcher"||shape.m_userData.shapeName=="RightBumper"||shape.m_userData.shapeName=="LeftBumper"){
+				context.fill();
+			}else{
+				context.stroke();
+			}
 		}
 	}
 </script>
