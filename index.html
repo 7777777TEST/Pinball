@@ -870,8 +870,6 @@ function drawShape(shape, context) {
 		switch (shape.m_type) {
 			case b2Shape.e_circleShape:{
 				var circle = shape;
-				//var pos = circle.m_position;
-				//var r = circle.m_radius;
 
 				var circlePos = circle.m_body.GetWorldCenter();
 
@@ -911,7 +909,11 @@ function drawShape(shape, context) {
 			}
 				break;
 		}
-		context.stroke();
+		if(shape.m_userData.shapeName=="launcher"||shape.m_userData.shapeName=="RightBumper"||shape.m_userData.shapeName=="LeftBumper"){
+			context.fill();
+		}else{
+			context.stroke();
+		}
 	}
 }
 			</script>
