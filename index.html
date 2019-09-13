@@ -886,7 +886,7 @@ h3 {
 		var LFlipperPos = pixelToB2dCoords(110, 452);
 		LFlipperBd.allowSleep = false;
 		LFlipperBd.position.Set(LFlipperPos.x, LFlipperPos.y);
-		LFlipperSd.userData={ drawShape: true,shapeName: "LFlipperC"};
+		LFlipperSd.userData={ drawShape: true,shapeName: "LFlipperC", allowSleep: false};
 		var LFlipperCircleBody = b2.world.CreateBody(LFlipperBd);
 		LFlipperCircleBody.CreateShape(LFlipperSd);
 		var LFlipperPolyBody = createPoly(b2.world, LFlipperPolyPos[0], LFlipperPolyPos[1], LFlipperPolyPoints, true, { drawShape: true, allowSleep: false, shapeName: "LFlipperPoly" });
@@ -924,7 +924,7 @@ h3 {
 		RFlipperBd.allowSleep = false;
 		RFlipperSd.rotation = 1;
 		RFlipperBd.position.Set(RFlipperPos.x, RFlipperPos.y);
-		RFlipperSd.userData={ drawShape: true,shapeName: "RFlipperC"};
+		RFlipperSd.userData={ drawShape: true,shapeName: "RFlipperC", allowSleep: false};
 		var RFlipperCircleBody = b2.world.CreateBody(RFlipperBd);
 		RFlipperCircleBody.CreateShape(RFlipperSd);
 		var RFlipperPolyBody = createPoly(b2.world, RFlipperPolyPos[0], RFlipperPolyPos[1], RFlipperPolyPoints, true, { drawShape: true, allowSleep: false, shapeName: "RFlipperPoly" });
